@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fWzG74y0Z0-pqcTVplNt0Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="" DesignTimeRectangle="752, 207, 876, 380" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='transcriptText' tag='TEXTAREA' /&gt;" Guid="b3a1ccea-c924-438c-878b-9a1c1c6b43cb" ImageBase64="" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Call Review Player' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="92841d5f4d26a8f14caf6f343157dd04.png" xmlns="">0NZBZtXK3TUKC7VA6YjMGOw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

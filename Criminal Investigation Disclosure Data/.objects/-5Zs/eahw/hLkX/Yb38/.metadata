@@ -1,0 +1,14 @@
+﻿{
+  "Name": "[00000 - 00007] Oka…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "Yb38NS93-EGtA4MxBsvGpA",
+  "Reference": "u70FNKxx7EOHPBwkfez66Q/Yb38NS93-EGtA4MxBsvGpA",
+  "ParentRef": "u70FNKxx7EOHPBwkfez66Q/hLkXInaXmUSm6me_J4v5dQ",
+  "Created": "2026-06-12T12:50:26.8084169Z",
+  "Updated": "2026-06-12T12:50:26.8084169Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

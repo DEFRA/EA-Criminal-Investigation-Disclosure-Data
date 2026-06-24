@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Validation Station</title>
+  <link rel="stylesheet" href="./image_validation.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+
+      <!-- TOP -->
+      <div class="top-grid">
+
+        <!-- IMAGE -->
+        <div class="card image-card">
+          <h2>Source Image</h2>
+
+          <div class="image-wrap">
+            <img id="sourceImage" />
+          </div>
+
+          <div class="control-row">
+            <button id="zoomIn">Zoom +</button>
+            <button id="zoomOut">Zoom -</button>
+            <button id="resetZoom">Reset</button>
+          </div>
+
+          <div class="status" id="imageStatus"></div>
+        </div>
+
+        <!-- OCR TEXT -->
+        <div class="card ocr-card">
+          <h2>OCR Extraction</h2>
+
+          <div class="field">
+            <textarea id="ocrText"></textarea>
+          </div>
+
+          <div class="validation-toolbar">
+            <span id="charCount"></span>
+
+            <label>
+              <input type="checkbox" id="markCorrect" />
+              Mark as correct
+            </label>
+
+            <button id="btnReset">Reset</button>
+          </div>
+
+          <div class="status" id="ocrStatus"></div>
+        </div>
+
+      </div>
+
+      <!-- METADATA (unchanged from your audio version) -->
+      <div class="metadata-band">
+        <div class="card metadata-card metadata-wide-card">
+          <h2>Metadata</h2>
+          <div class="metadata-grid-3col">
+
+            <div class="metadata-col">
+              <div class="field">
+                <label>Case ID</label>
+                <input id="caseId" type="text"/>
+              </div>
+              <div class="field">
+                <label>Document Type</label>
+                <input id="docType" type="text"/>
+              </div>
+            </div>
+
+            <div class="metadata-col">
+              <div class="field">
+                <label>Processed Date</label>
+                <input id="processedDate" type="text"/>
+              </div>
+              <div class="field">
+                <label>Classification</label>
+                <select id="classification">
+                  <option>Official</option>
+                  <option>Official-Sensitive</option>
+                  <option>Secret</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="metadata-col metadata-notes-col">
+              <div class="field field-fill">
+                <label>Reviewer Notes</label>
+                <textarea id="reviewNotes" class="review-notes-wide"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="metadata-actions-outer">
+          <button class="primary" id="btnSaveContinue">Save & Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./image_validation_data.js"></script>
+  <script src="./image_validation_app.js"></script>
+</body>
+</html>

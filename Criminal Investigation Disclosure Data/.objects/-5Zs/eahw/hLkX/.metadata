@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge Defra Intranet - Home",
+  "Type": "Screen",
+  "Id": "hLkXInaXmUSm6me_J4v5dQ",
+  "Reference": "u70FNKxx7EOHPBwkfez66Q/hLkXInaXmUSm6me_J4v5dQ",
+  "ParentRef": "u70FNKxx7EOHPBwkfez66Q/eahw6qftjkmHZ2PDG5fMdA",
+  "Created": "2026-06-12T11:26:22.2492802Z",
+  "Updated": "2026-06-12T11:26:22.2492802Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

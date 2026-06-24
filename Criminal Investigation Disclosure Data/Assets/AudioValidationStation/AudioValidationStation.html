@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call Review Player</title>
+  <link rel="stylesheet" href="./call_review_player.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+      <div class="top-grid">
+        <div class="card audio-card">
+          <h2>Audio Player</h2>
+
+          <audio id="audioPlayer" preload="metadata"></audio>
+
+          <div class="progress-section">
+            <div class="progress-wrap">
+              <div id="progressTooltip" class="progress-tooltip">00:00:00</div>
+              <input id="progressBar" class="progress-bar" type="range" min="0" max="100" step="0.1" value="0" />
+            </div>
+            <div class="time-row">
+              <span id="currentTimeLabel">00:00</span>
+              <span id="durationLabel">00:00</span>
+            </div>
+          </div>
+
+          <div class="control-row">
+            <button type="button" class="icon-btn" id="btnPlay" title="Play" aria-label="Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="btnPause" title="Pause" aria-label="Pause">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="btnRewind" title="Rewind 10 seconds" aria-label="Rewind 10 seconds">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 18V6l-8.5 6L11 18zm10 0V6l-8.5 6L21 18z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="btnForward" title="Fast forward 10 seconds" aria-label="Fast forward 10 seconds">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 18l8.5-6L13 6v12zM3 18l8.5-6L3 6v12z"/></svg>
+            </button>
+            <select id="speedControl">
+              <option value="1" selected>x1</option>
+              <option value="2">x2</option>
+              <option value="3">x3</option>
+            </select>
+          </div>
+
+          <div class="timeline-wrap">
+            <span class="timeline-subtitle">Call review timeline</span>
+            <div id="timelineTooltip" class="timeline-tooltip">00:00:00</div>
+            <canvas id="timelineCanvas" class="timeline-canvas"></canvas>
+            <div class="legend">
+              <div class="legend-item"><span class="legend-swatch quiet"></span><span>Silence</span></div>
+              <div class="legend-item"><span class="legend-swatch low"></span><span>Low speech</span></div>
+              <div class="legend-item"><span class="legend-swatch speech"></span><span>Speech</span></div>
+              <div class="legend-item"><span class="legend-swatch strong"></span><span>Strong speech</span></div>
+              <div class="legend-item"><span class="legend-swatch played"></span><span>Played</span></div>
+            </div>
+          </div>
+
+          <div class="status" id="audioStatus">Timeline ready.</div>
+        </div>
+
+        <div class="card transcript-card">
+          <h2>Transcript</h2>
+          <div class="field"><textarea id="transcriptText"></textarea></div>
+          <div class="status" id="transcriptStatus">Transcript loaded from data file.</div>
+        </div>
+      </div>
+
+      <div class="metadata-band">
+        <div class="card metadata-card metadata-wide-card">
+          <h2>Metadata</h2>
+          <div class="metadata-grid-3col">
+            <div class="metadata-col">
+              <div class="field">
+                <label for="caseId">Case ID</label>
+                <input id="caseId" type="text" value="CASE-000123" />
+              </div>
+              <div class="field">
+                <label for="callerName">Caller Name</label>
+                <input id="callerName" type="text" value="John Smith" />
+              </div>
+            </div>
+
+            <div class="metadata-col">
+              <div class="field">
+                <label for="callDate">Call Date</label>
+                <input id="callDate" type="text" value="10/06/2026 14:30" />
+              </div>
+              <div class="field">
+                <label for="classification">Data Classification</label>
+                <select id="classification">
+                  <option>Sensative</option>
+                  <option>Official-Sensative</option>
+                  <option>Top Secret</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="metadata-col metadata-notes-col">
+              <div class="field field-fill">
+                <label for="reviewNotes">Reviewer Notes</label>
+                <textarea id="reviewNotes" class="review-notes-wide">Placeholder review notes...</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="metadata-actions-outer">
+          <button type="button" class="primary" id="btnSaveContinue">Save &amp; Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./call_review_data.js"></script>
+  <script src="./call_review_app.js"></script>
+</body>
+</html>

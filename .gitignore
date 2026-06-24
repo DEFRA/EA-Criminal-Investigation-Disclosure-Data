@@ -1,0 +1,8 @@
+# Large model files
+publish/models/
+**/models/**/*.onnx
+
+# Build outputs
+bin/
+obj/
+publish/
