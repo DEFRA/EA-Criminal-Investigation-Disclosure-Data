@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CV6NyvVHWfZtyW7YaYI6UXyCekaT/36W79kEiVHMDh0ue+foouD19g372NOBrPuFIhrFbg6cZDqUXgN4gd5Xpg==",
+  "dgSpecHash": "UXFIYpAPlQxDQlFsrdRvHJxdkMT9LTBRSNj1Tgthi1XTu/CfYWbo/j4Qw6j1AFip2YS5J3rx9wKEEYho2kXVtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\Criminal Disclosure\\Criminal Investigation Disclosure Data\\.local\\",
+  "projectFilePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\da000087\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\da000087\\.nuget\\packages\\avalonedit\\6.1.3.50\\avalonedit.6.1.3.50.nupkg.sha512",
@@ -324,7 +324,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\Criminal Disclosure\\Criminal Investigation Disclosure Data\\.local",
+      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local",
       "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.17 requires UiPath.Excel.Activities (= 2.22.3) but version UiPath.Excel.Activities 2.23.5 was resolved.",
       "libraryId": "UiPath.Excel.Activities",
       "targetGraphs": [
@@ -336,7 +336,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\Criminal Disclosure\\Criminal Investigation Disclosure Data\\.local",
+      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local",
       "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.17 requires UiPath.System.Activities (= 23.10.6) but version UiPath.System.Activities 24.10.8 was resolved.",
       "libraryId": "UiPath.System.Activities",
       "targetGraphs": [
@@ -348,7 +348,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\Criminal Disclosure\\Criminal Investigation Disclosure Data\\.local",
+      "filePath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local",
       "message": "Detected package version outside of dependency constraint: DRACOE.Logging.64 1.0.17 requires UiPath.UIAutomation.Activities (= 23.10.13) but version UiPath.UIAutomation.Activities 24.10.16 was resolved.",
       "libraryId": "UiPath.UIAutomation.Activities",
       "targetGraphs": [
