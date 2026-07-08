@@ -6,3 +6,5 @@ publish/models/
 bin/
 obj/
 publish/
+/Nupkg
+Criminal Investigation Disclosure Data/Assets/SpeechToText/ggml-base.bin
