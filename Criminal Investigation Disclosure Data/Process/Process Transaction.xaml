@@ -153,7 +153,7 @@
       <AssemblyReference>UiPath.PDF</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " sap:VirtualizedContainerService.HintSize="674.8000000000001,684.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " sap:VirtualizedContainerService.HintSize="892.8000000000001,658.84" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="strWaveformJson" />
       <Variable x:TypeArguments="x:String" Name="strOutcomeResult" />
@@ -179,6 +179,8 @@
       <Variable x:TypeArguments="njl:JObject" Name="jobjOCRExtraction" />
       <Variable x:TypeArguments="x:String" Name="strPageText" />
       <Variable x:TypeArguments="x:String" Name="strSourceImage" />
+      <Variable x:TypeArguments="x:String" Name="strModelSize" />
+      <Variable x:TypeArguments="x:String" Name="strDecodingStrategy" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -191,7 +193,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID28</x:Reference>
+      <x:Reference>__ReferenceID29</x:Reference>
     </Flowchart.StartNode>
     <FlowDecision Condition="[not(CBool(g_Config(&quot;Unattended&quot;))) AND CBool(g_Config(&quot;PausePoint1&quot;))]" DisplayName="Pause point" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
@@ -282,9 +284,9 @@
     <FlowStep x:Name="__ReferenceID13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">245,305</av:Point>
+          <av:Point x:Key="ShapeLocation">245,425</av:Point>
           <av:Size x:Key="ShapeSize">110,70</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,375 300,425</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,495 300,545</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Output Location &amp; Arguments" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -339,10 +341,11 @@
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:String" xml:space="preserve">[Chr(34) + g_TransactionItem + Chr(34) + " " + Chr(34) + strOutputTranscriptFile + Chr(34) + " " +
-Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
+Chr(34) + strOutputWavFile + Chr(34) + " " +Chr(34) + strModelSize + Chr(34)+ " " +
+Chr(34) + strDecodingStrategy + Chr(34)]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:LogMessage DisplayName="Log Arguments" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Arguments: &quot; &amp; strArguments]">
+        <ui:LogMessage DisplayName="Log Arguments" sap:VirtualizedContainerService.HintSize="434,76" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Arguments: &quot; &amp; strArguments]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -355,9 +358,9 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
         <FlowStep x:Name="__ReferenceID4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">245,425</av:Point>
+              <av:Point x:Key="ShapeLocation">245,545</av:Point>
               <av:Size x:Key="ShapeSize">110,70</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,495 300,545</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">300,615 300,665</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[strArguments]" DisplayName="Start Transcript Process" FileName="Assets\SpeechToText\SpeechToText.exe" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="StartProcess_2" StartType="Synchronously" Timeout="6000000" />
@@ -365,9 +368,9 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
             <FlowStep x:Name="__ReferenceID5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">245,545</av:Point>
+                  <av:Point x:Key="ShapeLocation">245,665</av:Point>
                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,615 300,660</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,735 300,780</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Read Ouputs" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -392,19 +395,19 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">270,660</av:Point>
+                      <av:Point x:Key="ShapeLocation">270,780</av:Point>
                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                      <av:PointCollection x:Key="FalseConnector">270,690 185,690</av:PointCollection>
-                      <av:PointCollection x:Key="TrueConnector">330,690 405,690</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">270,810 185,810</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">330,810 405,810</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
                     <FlowStep x:Name="__ReferenceID8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">405,655</av:Point>
+                          <av:Point x:Key="ShapeLocation">405,775</av:Point>
                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">460,725 460,775</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">460,845 460,895</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Sequence DisplayName="Process Transcript Outputs" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -484,9 +487,9 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                         <FlowStep x:Name="__ReferenceID10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">405,775</av:Point>
+                              <av:Point x:Key="ShapeLocation">405,895</av:Point>
                               <av:Size x:Key="ShapeSize">110,70</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">460,845 460,895</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">460,965 460,1015</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Sequence DisplayName="Populate metadata" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_14">
@@ -546,9 +549,9 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                             <FlowStep x:Name="__ReferenceID11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">405,895</av:Point>
+                                  <av:Point x:Key="ShapeLocation">405,1015</av:Point>
                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">460,965 460,1015</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">460,1085 460,1135</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence DisplayName="Create data file" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_15">
@@ -582,9 +585,9 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                                 <FlowStep x:Name="__ReferenceID12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">405,1015</av:Point>
+                                      <av:Point x:Key="ShapeLocation">405,1135</av:Point>
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">460,1085 460,1135</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">460,1205 460,1255</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Sequence DisplayName="Display Audio Validation Station" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -649,7 +652,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                                     <FlowStep x:Name="__ReferenceID9">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">405,1135</av:Point>
+                                          <av:Point x:Key="ShapeLocation">405,1255</av:Point>
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -668,7 +671,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                     <FlowStep x:Name="__ReferenceID7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">75,655</av:Point>
+                          <av:Point x:Key="ShapeLocation">75,775</av:Point>
                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -697,7 +700,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
     <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
-    <FlowDecision x:Name="__ReferenceID15" Condition="[g_TransactionType = &quot;Audio&quot;]" DisplayName="Audio File?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5" True="{x:Reference __ReferenceID13}">
+    <FlowDecision x:Name="__ReferenceID15" Condition="[g_TransactionType = &quot;Audio&quot;]" DisplayName="Audio File?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -707,6 +710,53 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
           <av:PointCollection x:Key="FalseConnector">630,250 960,250 960,315</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <FlowDecision.True>
+        <FlowStep x:Name="__ReferenceID28">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">245,305</av:Point>
+              <av:Size x:Key="ShapeSize">110,70</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,375 300,425</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Set model size and decoding strategy" sap:VirtualizedContainerService.HintSize="468.00000000000006,383.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="Whisper model size, trades speed for accuracy.&#xD;&#xA;'                            One of: tiny | base | small | medium | large" DisplayName="Assign model size" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="Assign_53">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strModelSize]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">large</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign sap2010:Annotation.AnnotationText="Decoding strategy, trades speed for accuracy. &#xD;&#xA;Choose from: greedy | beam | beam-wide&#xD;&#xA;Beam sets it to 5 possible paths, beam-wide uses 8" DisplayName="Assign decoding strategy" sap:VirtualizedContainerService.HintSize="434,165.2" sap2010:WorkflowViewState.IdRef="Assign_54">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strDecodingStrategy]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">beam-wide</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+          </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID13</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowDecision.True>
       <FlowDecision.False>
         <FlowStep x:Name="__ReferenceID18">
           <sap:WorkflowViewStateService.ViewState>
@@ -959,10 +1009,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                                 </ui:MultipleAssign>
                               </Sequence>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID25" DisplayName="Is file a PDF?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                                  <FlowDecision.Condition>
-                                    <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="path.GetExtension(g_TransactionItem).ToLower() = &quot;.pdf&quot;" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID25" Condition="[path.GetExtension(g_TransactionItem).ToLower() = &quot;.pdf&quot;]" DisplayName="Is file a PDF?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1045,7 +1092,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
                                                   <av:PointCollection x:Key="ConnectorLocation">1120,1195 1120,1245</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Display OCR Validation Station" sap:VirtualizedContainerService.HintSize="569.6,1270.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                              <Sequence DisplayName="Display OCR Validation Station" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1181,7 +1228,7 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
         </FlowStep>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID28">
+    <FlowStep x:Name="__ReferenceID29">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">545,105</av:Point>
@@ -1214,5 +1261,6 @@ Chr(34) + strOutputWavFile + Chr(34)]</InArgument>
     <x:Reference>__ReferenceID25</x:Reference>
     <x:Reference>__ReferenceID26</x:Reference>
     <x:Reference>__ReferenceID27</x:Reference>
+    <x:Reference>__ReferenceID28</x:Reference>
   </Flowchart>
 </Activity>
