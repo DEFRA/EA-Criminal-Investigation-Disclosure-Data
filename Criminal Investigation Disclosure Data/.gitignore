@@ -1,0 +1,51 @@
+# ==========================================
+# UiPath - Git Ignore Configuration
+# ==========================================
+
+# UiPath Studio local files
+/.local/
+/.screenshots/
+
+# Exception screenshots
+/Exceptions_Screenshots/
+
+# Runtime data
+/Assets/AudioValidationStation/call_review_data*
+/Assets/SpeechToText/ggml-large*
+/Assets/ImageValidationStation/image_validation_data*
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Logs
+*.log
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Windows generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Development environment
+.vs/
+.vscode/
+.idea/
+
+# .NET build outputs
+**/bin/
+**/obj/
+
+# UiPath generated packages
+*.nupkg

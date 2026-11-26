@@ -27854,7 +27854,11 @@
       "projectName": "Criminal Investigation Disclosure Data",
       "projectPath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local",
       "packagesPath": "C:\\Users\\da000087\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local"
+      "outputPath": "C:\\Users\\da000087\\OneDrive - Defra\\UiPath\\EA-Criminal-Investigation-Disclosure-Data\\Criminal Investigation Disclosure Data\\.local",
+      "UsingMicrosoftNETSdk": false,
+      "restoreAuditProperties": {
+        "enableAudit": "False"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
